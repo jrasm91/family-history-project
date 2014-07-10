@@ -327,6 +327,18 @@ public class getGrave extends JFrame{
 							person.addChild(tempAdd);
 						} 
 					}
+					if(family.indexOf("Sibling") != -1){
+						System.out.println("Sibling");
+						family = family.substring(family.indexOf("&nbsp;&nbsp;"));
+						while(family.indexOf("&nbsp;&nbsp;") == 0){
+							String tempAdd 
+							= family.substring(family.indexOf("GRid") + 5, family.indexOf("</a><br"));
+							tempAdd = tempAdd.replaceAll("\">", " ");
+							family = family.substring(family.indexOf("</a><br>") + 8);
+//							person.addChild(tempAdd);
+							System.out.println(tempAdd);
+						} 
+					}
 				} 
 				line = line.substring(line.indexOf(">Burial") + 1);
 				line = line.substring(line.indexOf(">") + 1);
